@@ -152,25 +152,47 @@ After adjusting these settings:
 the 0h time point serves as a "control" or baseline for comparison, because this represents zero ARID1A expression (tumor cells just prior to ARID1A addback)
 
 ### GSEA Enrichment Score Plots and Intrepretation
-[0vsRest]
-- Upregulation of certain EMT genes in the 0h compared to all other samples
+The following plots compare the enrichment of the Epithelial Mesenchymal Transition (EMT) gene set at various time points. EMT is 
 
-[0vs12]
-- Large broad peak in 0h vs 12h: greatest quantity of severely unregulated EMT genes
+EMT has also been linked to the transformation of epithelial cells into primary and metastatic tumors.
 
-0vs24
-- Upregulation of certain EMT genes is smaller in magnitude compared to the 0vs12
+#### 0h vs REST
+<img width="438" alt="0vsREST" src="https://github.com/user-attachments/assets/664f3519-9383-4966-b057-700a5e1ce8ab">
 
-0vs48
-- Upregulation of certain EMT genes continues to decrease in magnitude
-- Greater downregulation of certain EMT genes (right end of the graph)
+- Upregulation of certain EMT genes in the 0h compared to all other samples (REST), but mostly downregulation as indicated by the trough and negative Enrichment Score
 
-0vs72
-- Similar results to 0vs48
+#### 0h vs 12h
+<img width="489" alt="0vs12" src="https://github.com/user-attachments/assets/4114b54e-b77c-4fa0-ac86-192514f32c41">
 
-0vs96
-- Similar results to 0vs48 and 0vs72
+- Large peak and positive Enrichment Score indicate severely upregulated EMT genes at 0h compared to 12h after ARID1A addback
 
+#### 0h vs 24h
+<img width="501" alt="0vs24" src="https://github.com/user-attachments/assets/46c5709d-9ddf-4783-92ef-16bc27213944">
+
+- The minimum and maximum running enrichment scores have similar absolute value, indicating a mixture of highly, lowly, and moderately expressed EMT genes at 0h compared to 24h
+- The magnitude of the minimum is slightly higher, resulting in a Negative Enrichment Score and slight downregulation of EMT genes at 0h compared to 24h
+
+#### 0h vs 48h
+<img width="504" alt="0vs48" src="https://github.com/user-attachments/assets/69d4f859-a6ca-4803-bb9d-e57076ec611b">
+
+- The the minimum is greater in magnitude than the maximum, indicating a negative enrichment score and downregulation of EMT genes at 0h compared to 48h
+
+#### 0h vs 72h
+<img width="502" alt="0vs72" src="https://github.com/user-attachments/assets/f1339107-b03d-491d-b259-17975b87b536">
+
+- Similar results to 0h vs 48h
+
+#### 0h vs 96h
+<img width="501" alt="0vs96" src="https://github.com/user-attachments/assets/37ae95f1-4f2a-43a9-806c-b41988708e8b">
+
+- Similar results to 0h vs 72h
+
+#### Summary
+- 12 hours after ARID1A addback, many EMT genes are severely downregulated, resulting in a Positive Enrichment Score for the comparison of 0h to 12h
+- 24 hours after ARID1A addback, expression of EMT genes increases
+- 48 hours after ARID1A addback, EMT genes are upregulated relative to their expression at 0h, resulting in a Negative Enrichment score for the comparison of 0h to 48h
+- 48 hours after ARID1A addback, expression of EMT genes stabilizes
+- This suggests that induced expression of ARID1A can decrease expression of EMT genes for up to 24h
 
 ## Leading Edge Analysis
 This is another feature available through the GSEA software that allows you to further analyze the genes from the leading edge subset (genes from a gene set that contributed most to the enrichment score). 
@@ -215,3 +237,4 @@ This tool is useful if you are analyzing multiple gene sets.
 3. GSEA User Guide: https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html
 4. GSEA Interpretation: https://www.youtube.com/watch?v=Yi4d7JIlAsM
 5. Leading Edge Analysis: https://www.youtube.com/watch?v=RGGFSqzKZQU&t=20s
+6. EMT: https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/14679171/
