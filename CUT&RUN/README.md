@@ -1,6 +1,6 @@
 # CUT&RUN
 
-## Scripts
+## Local Analysis Scripts
 1. bedtools_intersect.sh
 2. intervene_venn.sh
 3. bedgraph_to_bigwig.sh
