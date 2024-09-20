@@ -108,11 +108,11 @@ After adjusting these settings:
 - The leading edge subset is the subset of genes from the gene set that contribute most to the enrichment score.
 - For a sample with a positive enrichment score, these will be highly expressed genes from the gene set which hike up the Enrichment Score, leading to a peak.
 - Example:
-[insert image]
+<img width="462" alt="positive_ES_leading_edge" src="https://github.com/user-attachments/assets/dd79184f-dec5-49c5-ae41-2b3fe9742077">
 
 - For a sample with a negative enrichment score, these will be the lowly expressed genes from the gene set that hike up the Enrichment Score after a "trough", forming the rising edge of a minimum.
 - Example:
-[insert image]
+<img width="534" alt="negative_ES_leading_edge" src="https://github.com/user-attachments/assets/b3ee2d43-6c68-414f-b24f-0a07fc483631">
 
 ### Ranking Metric (bottom of Enrichment Plot)
 - The Ranking Metric tells us the correlation between a gene from the ranked gene list and the phenotype of the sample.
@@ -152,9 +152,9 @@ After adjusting these settings:
 the 0h time point serves as a "control" or baseline for comparison, because this represents zero ARID1A expression (tumor cells just prior to ARID1A addback)
 
 ### GSEA Enrichment Score Plots and Intrepretation
-The following plots compare the enrichment of the Epithelial Mesenchymal Transition (EMT) gene set at various time points. EMT is 
-
-EMT has also been linked to the transformation of epithelial cells into primary and metastatic tumors.
+- The following plots compare the enrichment of the Epithelial Mesenchymal Transition (EMT) gene set at various time points. 
+- EMT is "a biologic process that allows a polarized epithelial cell, which normally interacts with basement membrane via its basal surface, to undergo multiple biochemical changes that enable it to assume a mesenchymal cell phenotype, which includes enhanced migratory capacity, invasiveness, elevated resistance to apoptosis, and greatly increased production of ECM components" (Kalluri & Neilsen, 2003, as cited in Kalluri and Weinberg, 2009).
+- Not suprisingly, EMT has been linked to the transformation of epithelial cells into primary and metastatic tumors (Kalluri & Neilsen, 2003).
 
 #### 0h vs REST
 <img width="438" alt="0vsREST" src="https://github.com/user-attachments/assets/664f3519-9383-4966-b057-700a5e1ce8ab">
@@ -195,9 +195,7 @@ EMT has also been linked to the transformation of epithelial cells into primary 
 - This suggests that induced expression of ARID1A can decrease expression of EMT genes for up to 24h
 
 ## Leading Edge Analysis
-This is another feature available through the GSEA software that allows you to further analyze the genes from the leading edge subset (genes from a gene set that contributed most to the enrichment score). 
-
-This tool is useful if you are analyzing multiple gene sets.
+This is another feature available through the GSEA software that allows you to further analyze the genes from the leading edge subset (genes from a gene set that contributed most to the enrichment score). This tool is particularly useful if you are analyzing multiple gene sets.
 
 ### Steps:
 1. Select a GSEA report from the filesystem
@@ -237,4 +235,5 @@ This tool is useful if you are analyzing multiple gene sets.
 3. GSEA User Guide: https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html
 4. GSEA Interpretation: https://www.youtube.com/watch?v=Yi4d7JIlAsM
 5. Leading Edge Analysis: https://www.youtube.com/watch?v=RGGFSqzKZQU&t=20s
-6. EMT: https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/14679171/
+6. Kalluri, R., & Neilson, E. G. (2003). Epithelial-mesenchymal transition and its implications for fibrosis. The Journal of clinical investigation, 112(12), 1776–1784. https://doi.org/10.1172/JCI20530
+7. Kalluri, R., & Weinberg, R. A. (2009). The basics of epithelial-mesenchymal transition. The Journal of clinical investigation, 119(6), 1420–1428. https://doi.org/10.1172/JCI39104
