@@ -5,7 +5,9 @@
 2. intervene_venn.sh
 3. bedgraph_to_bigwig.sh
 4. deeptools_heatmap.sh
-   
+
+NOTE: this is not a complete pipeline for analyzing CUT&RUN data. These scripts are used for post-peakcalling analysis of BED and BEDGRAPH files.
+
 These scripts were tested locally using a dataset from NCBI GEO with GEO accession number GSM104550.
 
 The data can be downloaded from here: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE104550
