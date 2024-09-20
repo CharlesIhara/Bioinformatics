@@ -97,11 +97,12 @@ After adjusting these settings:
 - The enrichment score is the absolute maximum or minimum value of the running enrichment score obtained while walking down the list of ranked genes.
 - For a gene set that is upregulated in the sample, genes from the gene set will likely fall among the top/highly ranked genes. This will lead to a positive enrichment score (peak) towards the "high rank" end the gene list.
 - Example:
-[insert image]
+<img width="494" alt="positive_ES" src="https://github.com/user-attachments/assets/33625d54-1955-44f6-80bf-5579606c51f1">
+
 
 - For a gene set that is downregulated in the sample, genes from the gene set will likely fall among the bottom/lowly ranked genes. This will lead to a negative enrichment score (trough) towards the "low rank" end of the gene list.
 - Example:
-[insert image]
+<img width="558" alt="negative_ES" src="https://github.com/user-attachments/assets/d91a5211-20f4-485b-9808-bb02d5f81ae3">
 
 ### Leading Edge Subset
 - The leading edge subset is the subset of genes from the gene set that contribute most to the enrichment score.
@@ -141,7 +142,7 @@ After adjusting these settings:
 - This is another type of adjusted p-value and is less stringent than the (BH)-corrected p-value for filtering out insignificant gene sets
 - The most significant gene sets are those with FDR (q-value) less than 0.25.
 
-## Example Data
+## Example GSEA Analysis
 
 ### Experimental Background
 - The following analysis was performed on normalized counts data from an RNA-sequencing experiment involving a tumor organoid 
@@ -150,15 +151,67 @@ After adjusting these settings:
 - Thus, the 12h data represents the RNA expression levels 12 hours after ARID1A addback in perviously ARID1A-deficient tumor cells
 the 0h time point serves as a "control" or baseline for comparison, because this represents zero ARID1A expression (tumor cells just prior to ARID1A addback)
 
-### GSEA Enrichment Score Plots
+### GSEA Enrichment Score Plots and Intrepretation
+[0vsRest]
+- Upregulation of certain EMT genes in the 0h compared to all other samples
+
+[0vs12]
+- Large broad peak in 0h vs 12h: greatest quantity of severely unregulated EMT genes
+
+0vs24
+- Upregulation of certain EMT genes is smaller in magnitude compared to the 0vs12
+
+0vs48
+- Upregulation of certain EMT genes continues to decrease in magnitude
+- Greater downregulation of certain EMT genes (right end of the graph)
+
+0vs72
+- Similar results to 0vs48
+
+0vs96
+- Similar results to 0vs48 and 0vs72
 
 
-### Intrepretation
+## Leading Edge Analysis
+This is another feature available through the GSEA software that allows you to further analyze the genes from the leading edge subset (genes from a gene set that contributed most to the enrichment score). 
 
+This tool is useful if you are analyzing multiple gene sets.
 
+### Steps:
+1. Select a GSEA report from the filesystem
+   - rows = gene sets
+   - columns = GSEA output statistics (ES, NES, p-value, FDR, etc)
+2. Order the rows based on a column of your choosing (ex: FDR)
+3. Select the rows (gene sets) whose leading edge subsets you want to analyze
+4. Run leading edge analysis
+
+### Outputs:
+1. Heatmap
+- matrix rows = gene sets
+- matrix columns = genes from the leading edge subsets
+- cell color = expression value for each gene in each gene set
+- clustering allows us to identify enriched genes that correspond to multiple gene sets
+
+2. Set-to-Set Plot
+- plot of correlation between gene sets
+- matrix rows = gene set A
+- matrix columns = gene set B
+- cell color = corresponds to the ratio X/Y (number of genes in A / number of genes in A union B)
+
+3. Gene in Subsets Plot
+- x-axis = genes from the leading edge subsets
+- y-axis = number of gene sets that gene x is in
+- genes that are a part of many enriched gene sets are of interest
+
+4. Histogram
+- x-axis = Jacquard Statistic for each pair of gene sets
+- y-axis = # of occurrences of a certain Jacquard Statistic value
+- Jacquard Statistic for a pair of gene sets A and B = # of genes in the intersection of the leading edge subsets of both A and B divided by the # of genes in the union of A and B's leading edge subsets
+- this approximates the similarity of two gene sets
 
 ## References
-1. https://www.gsea-msigdb.org/gsea/doc/subramanian_tamayo_gsea_pnas.pdf
-2. https://www.youtube.com/watch?v=KY6SS4vRchY
-3. https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html
-4. https://www.youtube.com/watch?v=Yi4d7JIlAsM
+1. GSEA publication: https://www.gsea-msigdb.org/gsea/doc/subramanian_tamayo_gsea_pnas.pdf
+2. GSEA for RNA-seq: https://www.youtube.com/watch?v=KY6SS4vRchY
+3. GSEA User Guide: https://www.gsea-msigdb.org/gsea/doc/GSEAUserGuideFrame.html
+4. GSEA Interpretation: https://www.youtube.com/watch?v=Yi4d7JIlAsM
+5. Leading Edge Analysis: https://www.youtube.com/watch?v=RGGFSqzKZQU&t=20s
